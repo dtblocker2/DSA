@@ -1,2 +1,3 @@
-k = "lol"
-print(k.__reversed__)
+a,b = map(int, input().split())
+
+print(a+b)
