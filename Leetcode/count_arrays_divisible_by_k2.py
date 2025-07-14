@@ -1,0 +1,10 @@
+''' Efficient way of problem'''
+class Solution:
+    def countPairs(self, A, k):
+        cnt = Counter(math.gcd(a, k) for a in A)
+        res = 0
+        for a in cnt:
+            for b in cnt:
+                if a <= b and a * b % k == 0:
+                    res += cnt[a] * cnt[b] if a < b else cnt[a] * (cnt[a] - 1) // 2
+        return res
